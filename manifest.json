@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "WA SEND AFONSO",
+  "version": "5.1.0",
+  "description": "Fidelidade absoluta de formatação via URL SPA, zero blocos amassados. Mantido módulo Anti-Loop e proteção de 7 dias.",
+  "permissions": ["storage", "tabs", "alarms", "windows"],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Abrir WA SEND AFONSO"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
